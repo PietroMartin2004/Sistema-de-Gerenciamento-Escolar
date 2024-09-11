@@ -73,4 +73,4 @@ def criar_tabela():
     
     conexao.cursor.execute(criar_tabela_sql)
     conexao.conn.commit()
-    print("Tabela criada com sucesso!")
+    

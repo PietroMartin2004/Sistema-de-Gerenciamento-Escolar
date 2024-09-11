@@ -8,7 +8,7 @@ def consultar_boletim():
     matricula = input("Informe o número da matrícula que deseja consultar: ")
     try:
         # Pegando a matrícula da tabela
-        resultado = conexao.conn.execute('''SELECT * FROM aluno WHERE matricula = ?''', (matricula,)).fetchall()
+        resultado = conexao.conn.execute('''SELECT * FROM aluno WHERE matricula = ?''',(matricula,)).fetchall()
         if not resultado:
             print("Matrícula não encontrada!")
         else:
@@ -16,10 +16,10 @@ def consultar_boletim():
                 print(">>>>>>>>>><<<<<<<<<<\n")
                 print(f"Matrícula: {result[0]}")
                 print(f"Nome: {result[1]}")
-                print(f"Presença: {result[12]}")
-                print(f"Falta: {result[13]}")
-                print(f"Série: {result[14]}")
-                print(f"Turno: {result[15]}\n")
+                print(f"Presença: {result[11]}")
+                print(f"Falta: {result[12]}")
+                print(f"Série: {result[13]}")
+                print(f"Turno: {result[14]}\n")
                 print("Notas:")
                 print(f"  Português: {result[16]} (1ª unidade), {result[17]} (2ª unidade), {result[18]} (3ª unidade)")
                 print(f"  Matemática: {result[19]} (1ª unidade), {result[20]} (2ª unidade), {result[21]} (3ª unidade)")

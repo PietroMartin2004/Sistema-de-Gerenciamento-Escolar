@@ -17,7 +17,7 @@ def menu():
     print(f"{GREEN}4. Diretoria{RESET}")
     print(f"{GREEN}5. Sair{RESET}")
     global opcao      
-    opcao = input (f"{BLUE} Digite a opção escolhida {RESET}")
+    opcao = input (f"{BLUE}Digite a opção escolhida: {RESET}")
     return opcao
     
 
