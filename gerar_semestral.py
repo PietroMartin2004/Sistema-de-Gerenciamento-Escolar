@@ -3,6 +3,8 @@ import conexao
 
 def gerar_relatorio_semestral():
     try:
+        
+        conexao.conectar_banco()
         matricula = int(input("Informe a matrícula do aluno para gerar o relatório: "))
         
         # Obter o aluno
@@ -30,3 +32,4 @@ def gerar_relatorio_semestral():
         print("Erro ao gerar o relatório!", erro)
     finally:
         conexao.conn.close()
+gerar_relatorio_semestral()
