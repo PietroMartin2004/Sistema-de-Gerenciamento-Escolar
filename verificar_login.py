@@ -21,8 +21,8 @@ def verificar_credenciais():
     
     if resultado:
     #Printa o resultado da busca
-    	print(f"A sua matéria é: {resultado}")
-    	return email,senha
+        print(f"A sua matéria é: {resultado}")
+        return email,senha
     
     else:
         print("Email e senhas inválidas")

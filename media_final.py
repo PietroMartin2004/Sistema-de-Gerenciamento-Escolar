@@ -36,7 +36,9 @@ def obter_medias_finais():
              historia_terceira_unidade) / 3 AS historia_media_final,
             (sociologia_primeira_unidade +
              sociologia_segunda_unidade +
-             sociologia_terceira_unidade) / 3 AS sociologia_media_final,;
+             sociologia_terceira_unidade) / 3 AS sociologia_media_final
+
+        FROM aluno
         """
         conexao.cursor.execute(media)
     except Exception as e:

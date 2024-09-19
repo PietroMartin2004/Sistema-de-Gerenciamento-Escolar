@@ -10,6 +10,7 @@ def cadastro():
     try:
         # Conectar ao banco
         conexao.conectar_banco()
+        tabela.criar_tabela()
         
         # Coletar dados do usuário
         nome = input("Informe o nome completo do aluno: ")
