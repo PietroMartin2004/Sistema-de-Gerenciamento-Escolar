@@ -4,7 +4,8 @@ import tabela
 
       
 def continuar():
-    escolha = input("Deseja realmente sair? (S/qualquer outro valor para sair: )").lower()
+    
+    escolha = input("Deseja realmente sair? S/Sim para sair/Qualquer outro valor para Continuar: ").lower()
     if escolha == 's' or escolha == 'sim':
         opcao = '3'
     else:
