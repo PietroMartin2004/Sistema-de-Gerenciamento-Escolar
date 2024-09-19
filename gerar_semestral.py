@@ -32,4 +32,3 @@ def gerar_relatorio_semestral():
         print("Erro ao gerar o relatório!", erro)
     finally:
         conexao.conn.close()
-gerar_relatorio_semestral()
