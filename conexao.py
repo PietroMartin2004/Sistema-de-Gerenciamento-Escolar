@@ -1,8 +1,9 @@
 import sqlite3
 
-
+#Conectar Banco
 def conectar_banco():
     try:
+        #Declarando Banco 
         global conn
         conn = sqlite3.connect('teste7.db')
         global cursor
