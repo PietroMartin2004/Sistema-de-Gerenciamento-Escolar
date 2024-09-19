@@ -1,5 +1,6 @@
 import conexao
 
+
 def obter_medias_finais():
     conexao.conectar_banco()
     try:

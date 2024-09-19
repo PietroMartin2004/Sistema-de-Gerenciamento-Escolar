@@ -6,11 +6,12 @@ import primeiraU
 import segundaU
 import terceiraU
 
+
 def cadastro():
     try:
         # Conectar ao banco
         conexao.conectar_banco()
-        
+
         # Coletar dados do usuário
         nome = input("Informe o nome completo do aluno: ")
         verificar_data.nascimento()
@@ -19,7 +20,8 @@ def cadastro():
         email = input("Informe seu email (Responsável): ")
         endereco = input("Informe seu Endereço: ")
         nomeResponsavel = input("Informe o nome do responsável: ")
-        nomeResponsavel2 = input("Informe o nome do segundo responsável (deixe em branco se não houver): ") or None
+        nomeResponsavel2 = input(
+            "Informe o nome do segundo responsável (deixe em branco se não houver): ") or None
         serie = int(input("Informe a série do aluno (1° a 3° ): "))
         if serie <= 0 or serie > 3:
             print("Série inválida. Tente novamente.")
@@ -28,7 +30,7 @@ def cadastro():
         if turno not in ["matutino", "vespertino", "noturno"]:
             print("Turno inválido. Tente novamente.")
             return
-        
+
         # Definindo relatórios
         relatorio1 = None
         relatorio2 = None
@@ -36,7 +38,7 @@ def cadastro():
         relatorioA1 = None
         relatorioA2 = None
         relatorioA3 = None
-        
+
         # Coletando notas de unidades
         primeiraU.primeira_unidade()
         segundaU.segunda_unidade()
@@ -44,7 +46,7 @@ def cadastro():
 
         presenca = 0
         falta = 0
-        
+
         # Comando SQL para inserção
         inserir_aluno = """
         INSERT INTO aluno (
@@ -120,7 +122,7 @@ def cadastro():
             relatorioA3
         )
 
-        # Executa o insert e passa os valores 
+        # Executa o insert e passa os valores
         conexao.cursor.execute(inserir_aluno, valores)
         conexao.conn.commit()
 

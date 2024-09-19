@@ -3,6 +3,7 @@ import deletar
 import gerar_semestral
 import gerar_anual
 
+
 def diretor():
     RESET = "\033[0m"
     BOLD = "\033[1m"
@@ -15,7 +16,7 @@ def diretor():
     print(BOLD + GREEN + "                 ESCOLA MODERNA" + RESET)
     print(BOLD + BLUE + "="*50 + RESET)
     print()
-    
+
     print(f"{GREEN}1. Adicionar Aluno{RESET}")
     print(f"{GREEN}2. Deletar um aluno {RESET}")
     print(f"{GREEN}3. Gerar relatorio semestral {RESET}")

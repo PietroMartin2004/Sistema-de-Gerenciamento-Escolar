@@ -1,24 +1,29 @@
 import sqlite3
 import conexao
 import tabela
+
+
 def presenca():
     try:
         opcao = 0
         while True:
             # Conectar ao banco de dados e a tabela
-            
+
             tabela.criar_tabela()
-            
+
             # Pede matrícula do aluno
-            matricula = input("Informe a matrícula que deseja atualizar a presença: ")
-            resultado = conexao.conn.execute('''SELECT * FROM aluno WHERE matricula = ? ''', (matricula,)).fetchall()
-            
+            matricula = input(
+                "Informe a matrícula que deseja atualizar a presença: ")
+            resultado = conexao.conn.execute(
+                '''SELECT * FROM aluno WHERE matricula = ? ''', (matricula,)).fetchall()
+
             if resultado == []:
                 print("Matrícula não encontrada!")
                 break
             else:
                 for result in resultado:
-                    opcao = input("O Aluno esteve na aula? \n1. Presença\n2. Falta\(Qualquer outra opção).Voltar ao menu\nEscolha uma opção: ")
+                    opcao = input(
+                        "O Aluno esteve na aula? \n1. Presença\n2. Falta\(Qualquer outra opção).Voltar ao menu\nEscolha uma opção: ")
 
                     if opcao == '1':
                         # Comando SQL para atualizar a presença
@@ -33,12 +38,9 @@ def presenca():
                         conexao.cursor.execute(att, (matricula,))
                         conexao.conn.commit()
 
-                
-                        
     except sqlite3.Error as erro:
         print("Erro ao atualizar presença:", erro)
-    
+
     finally:
         conexao.conn.commit()
         conexao.conn.close()
-        

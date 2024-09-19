@@ -1,9 +1,11 @@
 import sqlite3
 
-#Conectar Banco
+# Conectar Banco
+
+
 def conectar_banco():
     try:
-        #Declarando Banco 
+        # Declarando Banco
         global conn
         conn = sqlite3.connect('teste7.db')
         global cursor
@@ -12,5 +14,3 @@ def conectar_banco():
         conn.commit()
     except sqlite3.Error as erro:
         print("Erro de conexão com o banco de dados!")
- 
- 

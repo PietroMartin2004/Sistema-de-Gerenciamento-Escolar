@@ -2,6 +2,7 @@ import sqlite3
 import conexao
 import verificar_login
 
+
 def notas():
     global nota
     # Verifica as credenciais do professor e obtém a matéria
@@ -29,7 +30,7 @@ def notas():
 
         # Pede a unidade para alterar as notas
         option = int(input("Qual unidade deseja alterar a nota? (1° a 3°) "))
-        
+
         if option < 1 or option > 3:
             print("Opção inválida!")
             notas()
@@ -90,4 +91,3 @@ def notas():
 
     finally:
         conexao.conn.close()
-

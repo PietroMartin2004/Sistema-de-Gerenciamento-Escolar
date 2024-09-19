@@ -1,10 +1,11 @@
 import conexao
 import media_final
 
+
 def criar_tabela():
     conexao.conectar_banco()
     media_final.obter_medias_finais()
-    
+
     criar_tabela_sql = """
     CREATE TABLE IF NOT EXISTS aluno (
         matricula INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -70,7 +71,6 @@ def criar_tabela():
         relatorioA3 TEXT
     )
     """
-    
+
     conexao.cursor.execute(criar_tabela_sql)
     conexao.conn.commit()
-    
