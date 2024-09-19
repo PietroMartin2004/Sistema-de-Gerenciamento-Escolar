@@ -4,7 +4,7 @@ import menu_professor
 import menu_diretor
 import menu_principal
 import verificar_senha
-
+#oi
 def main():
     while True:
         opcao = menu_principal.menu()
