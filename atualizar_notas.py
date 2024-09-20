@@ -35,7 +35,7 @@ def notas():
             notas()
 
         # Pede a nota apenas para a matéria específica
-        if resultado[1] == "portugues":
+        if resultado[0] == "portugues":
             nota = float(input("Informe a Nota de Português: "))
         elif resultado[0] == "matematica":
             nota = float(input("Informe a Nota de Matemática: "))

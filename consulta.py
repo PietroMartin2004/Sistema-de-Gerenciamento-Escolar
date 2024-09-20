@@ -1,9 +1,11 @@
 import sqlite3
 import conexao
 import tabela
-
+import media_final
 def consultar_boletim():
     tabela.criar_tabela()
+    #Chamando a função do cálculo das médias para ir atualizando
+    media_final.obter_medias_finais()
     # Matricula
     matricula = input("Informe o número da matrícula que deseja consultar: ")
     try:
@@ -45,10 +47,6 @@ def consultar_boletim():
                 print(f"  História:   {result[53]}")
                 print(f"  Sociologia: {result[54]}")
                 
-                print(f"  Relatorio 1: {result[55]}")
-                print(f"  Relatorio 2: {result[56]}")
-                print(f"  Relatorio 3: {result[57]}")
-
     except sqlite3.Error as erro:
         print("Erro ao encontrar aluno", erro)
     finally:

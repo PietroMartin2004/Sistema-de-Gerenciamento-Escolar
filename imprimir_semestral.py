@@ -19,13 +19,13 @@ def imprimir_relatorio_semestral():
         relatorio3 = conexao.cursor.fetchone()
 
         print("\nRelatório sobre o desempenho:")
-        print(relatorio1)
+        print(relatorio1[0] if relatorio1 else "Nenhum relatório disponível.")
 
         print("\nRelatório sobre a presença:")
-        print(relatorio2)
+        print(relatorio2[0] if relatorio2 else "Nenhum relatório disponível.")
 
         print("\nRelatório sobre o comportamento:")
-        print(relatorio3)
+        print(relatorio3[0] if relatorio3 else "Nenhum relatório disponível.")
 
     except sqlite3.Error as erro:
         print("Erro ao imprimir os relatórios!", erro)
