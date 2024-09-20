@@ -8,7 +8,7 @@ def consultar_boletim():
     matricula = input("Informe o número da matrícula que deseja consultar: ")
     try:
         # Pegando a matrícula da tabela
-        resultado = conexao.conn.execute('''SELECT * FROM aluno WHERE matricula = ?''',(matricula,)).fetchall()
+        resultado = conexao.conn.execute('''SELECT * FROM aluno WHERE matricula = ?''', (matricula,)).fetchall()
         if not resultado:
             print("Matrícula não encontrada!")
         else:
@@ -22,30 +22,33 @@ def consultar_boletim():
                 print(f"Turno: {result[14]}\n")
                 print("Notas:")
                 print(f"              (1ªUnidade ),    (2ªUnidade ),    (3ªUnidade )")
-                print(f"  Português:     {result[16]}              {result[17]}              {result[18]}")
-                print(f"  Matemática:    {result[19]}              {result[20]}              {result[21]}")
-                print(f"  Biologia:      {result[22]}              {result[23]}              {result[24]}")
-                print(f"  Física:        {result[25]}              {result[26]}              {result[27]}")
-                print(f"  Inglês:        {result[28]}              {result[29]}              {result[30]}")
-                print(f"  Filosofia:     {result[31]}              {result[32]}              {result[33]}")
-                print(f"  Artes:         {result[34]}              {result[35]}              {result[36]}")
-                print(f"  Química:       {result[37]}              {result[38]}              {result[39]}")
-                print(f"  História:      {result[40]}              {result[41]}              {result[42]}")
-                print(f"  Sociologia:    {result[43]}              {result[44]}              {result[45]}")
+                print(f"  Português:     {result[15]}              {result[25]}              {result[35]}")
+                print(f"  Matemática:    {result[16]}              {result[26]}              {result[36]}")
+                print(f"  Biologia:      {result[17]}              {result[27]}              {result[37]}")
+                print(f"  Física:        {result[18]}              {result[28]}              {result[38]}")
+                print(f"  Inglês:        {result[19]}              {result[29]}              {result[39]}")
+                print(f"  Filosofia:     {result[20]}              {result[30]}              {result[40]}")
+                print(f"  Artes:         {result[21]}              {result[31]}              {result[41]}")
+                print(f"  Química:       {result[22]}              {result[32]}              {result[42]}")
+                print(f"  História:      {result[23]}              {result[33]}              {result[43]}")
+                print(f"  Sociologia:    {result[24]}              {result[34]}              {result[44]}")
             
                 print("\nMédias Finais:")
-                print(f"  Português:  {result[49]}")
-                print(f"  Matemática: {result[50]}")
-                print(f"  Biologia:   {result[51]}")
-                print(f"  Física:     {result[52]}")
-                print(f"  Inglês:     {result[53]}")
-                print(f"  Filosofia:  {result[54]}")
-                print(f"  Artes:      {result[55]}")
-                print(f"  Química:    {result[56]}")
-                print(f"  História:   {result[57]}")
-                print(f"  Sociologia: {result[58]}")
+                print(f"  Português:  {result[45]}")
+                print(f"  Matemática: {result[46]}")
+                print(f"  Biologia:   {result[47]}")
+                print(f"  Física:     {result[48]}")
+                print(f"  Inglês:     {result[49]}")
+                print(f"  Filosofia:  {result[50]}")
+                print(f"  Artes:      {result[51]}")
+                print(f"  Química:    {result[52]}")
+                print(f"  História:   {result[53]}")
+                print(f"  Sociologia: {result[54]}")
                 
-        
+                print(f"  Relatorio 1: {result[55]}")
+                print(f"  Relatorio 2: {result[56]}")
+                print(f"  Relatorio 3: {result[57]}")
+
     except sqlite3.Error as erro:
         print("Erro ao encontrar aluno", erro)
     finally:
