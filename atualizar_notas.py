@@ -86,6 +86,8 @@ def notas():
                 conexao.conn.execute(atualizar_notas, (nota, matricula))
                 conexao.conn.commit()
                 print("Nota atualizada com sucesso!")
+                
+                
 
         except sqlite3.Error as erro:
             print("Erro ao atualizar notas!", erro)

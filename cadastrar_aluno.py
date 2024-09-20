@@ -34,6 +34,9 @@ def cadastro():
         relatorio1 = None
         relatorio2 = None
         relatorio3 = None
+        relatorio4 = None
+        relatorio5 = None
+        relatorio6 = None
         relatorioA1 = None
         relatorioA2 = None
         relatorioA3 = None
@@ -63,8 +66,8 @@ def cadastro():
             fisica_terceira_unidade, ingles_terceira_unidade, filosofia_terceira_unidade,
             artes_terceira_unidade, quimica_terceira_unidade, historia_terceira_unidade,
             sociologia_terceira_unidade, 
-            relatorio1, relatorio2, relatorio3, relatorioA1, relatorioA2, relatorioA3
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            relatorio1, relatorio2, relatorio3, relatorio4, relatorio5 ,relatorio6, relatorioA1, relatorioA2, relatorioA3
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?)
         """
 
         # Valores a serem inseridos
@@ -116,6 +119,9 @@ def cadastro():
             relatorio1,
             relatorio2,
             relatorio3,
+            relatorio4,
+            relatorio5,
+            relatorio6,
             relatorioA1,
             relatorioA2,
             relatorioA3

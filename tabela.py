@@ -65,6 +65,9 @@ def criar_tabela():
         relatorio1 TEXT,
         relatorio2 TEXT,
         relatorio3 TEXT,
+        relatorio4 TEXT,
+        relatorio5 TEXT,
+        relatorio6 TEXT,
         relatorioA1 TEXT,
         relatorioA2 TEXT,
         relatorioA3 TEXT
@@ -73,4 +76,3 @@ def criar_tabela():
     
     conexao.cursor.execute(criar_tabela_sql)
     conexao.conn.commit()
-    
