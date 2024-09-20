@@ -21,6 +21,7 @@ def consultar_boletim():
                 print(f"Série: {result[13]}")
                 print(f"Turno: {result[14]}\n")
                 print("Notas:")
+<<<<<<< Updated upstream
                 print(f"  Português: {result[16]} (1ª unidade), {result[17]} (2ª unidade), {result[18]} (3ª unidade)")
                 print(f"  Matemática: {result[19]} (1ª unidade), {result[20]} (2ª unidade), {result[21]} (3ª unidade)")
                 print(f"  Biologia: {result[22]} (1ª unidade), {result[23]} (2ª unidade), {result[24]} (3ª unidade)")
@@ -43,6 +44,31 @@ def consultar_boletim():
                 print(f"  Química: {result[56]}")
                 print(f"  História: {result[57]}")
                 print(f"  Sociologia: {result[58]}")
+=======
+                print(f"              (1ªUnidade )    (2ªUnidade )    (3ªUnidade )")
+                print(f"  Português:     {result[15]}              {result[24]}              {result[34]}")
+                print(f"  Matemática:    {result[16]}              {result[25]}              {result[35]}")
+                print(f"  Biologia:      {result[17]}              {result[26]}              {result[36]}")
+                print(f"  Física:        {result[18]}              {result[27]}              {result[37]}")
+                print(f"  Inglês:        {result[19]}              {result[28]}              {result[38]}")
+                print(f"  Filosofia:     {result[20]}              {result[29]}              {result[39]}")
+                print(f"  Artes:         {result[21]}              {result[30]}              {result[37]}")
+                print(f"  Química:       {result[22]}              {result[31]}              {result[38]}")
+                print(f"  História:      {result[23]}              {result[32]}              {result[40]}")
+                print(f"  Sociologia:    {result[24]}              {result[33]}              {result[41]}")
+            
+                print("\nMédias Finais:")
+                print(f"  Português:  {result[42]}")
+                print(f"  Matemática: {result[43]}")
+                print(f"  Biologia:   {result[44]}")
+                print(f"  Física:     {result[45]}")
+                print(f"  Inglês:     {result[46]}")
+                print(f"  Filosofia:  {result[47]}")
+                print(f"  Artes:      {result[48]}")
+                print(f"  Química:    {result[49]}")
+                print(f"  História:   {result[50]}")
+                print(f"  Sociologia: {result[51]}")
+>>>>>>> Stashed changes
                 
         
     except sqlite3.Error as erro:

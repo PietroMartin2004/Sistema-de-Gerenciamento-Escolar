@@ -1,6 +1,5 @@
 import sqlite3
 import conexao
-
 def imprimir_relatorio_anual():
     try:
         conexao.conectar_banco()
