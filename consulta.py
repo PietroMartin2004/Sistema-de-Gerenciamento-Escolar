@@ -23,7 +23,7 @@ def consultar_boletim():
                 print(f"Série: {result[13]}")
                 print(f"Turno: {result[14]}\n")
                 print("Notas:")
-                print(f"              (1ªUnidade ),    (2ªUnidade ),    (3ªUnidade )")
+                print(f"              (1ªUnidade )     (2ªUnidade )     (3ªUnidade )")
                 print(f"  Português:     {result[15]}              {result[25]}              {result[35]}")
                 print(f"  Matemática:    {result[16]}              {result[26]}              {result[36]}")
                 print(f"  Biologia:      {result[17]}              {result[27]}              {result[37]}")
