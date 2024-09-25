@@ -19,7 +19,7 @@ def diretor():
     print(f"{GREEN}1. Adicionar Aluno{RESET}")
     print(f"{GREEN}2. Deletar um aluno {RESET}")
     print(f"{GREEN}3. Gerar relatorio semestral {RESET}")
-    print(f"{GREEN}4. Gerar relatorio anual semestral {RESET}")
+    print(f"{GREEN}4. Gerar relatorio anual {RESET}")
     print(f"{GREEN}(Qualquer outro valor para sair). Sair{RESET}")
 
     global opcao
@@ -30,8 +30,6 @@ def diretor():
     elif opcao == '2':
         deletar.excluir_aluno()
     elif opcao == '3':
-        print(f"{GREEN} 1. Relatorio semestral {RESET}")
         gerar_semestral.gerar_relatorio_semestral()
     elif opcao == '4':
-        print(f"{GREEN} 2. Relatorio anual {RESET}")
         gerar_anual.gerar_relatorio_anual()

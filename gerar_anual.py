@@ -20,6 +20,7 @@ def gerar_relatorio_anual():
                 SET relatorioA1 = ?, relatorioA2 = ?, relatorioA3 = ?
                 WHERE matricula = ?
             """, (relatorioA1, relatorioA2, relatorioA3, matricula))
+
             
             conexao.conn.commit()
             print("Relatório anual atualizado com sucesso!")
@@ -29,4 +30,5 @@ def gerar_relatorio_anual():
     except sqlite3.Error as erro:
         print("Erro ao gerar o relatório anual!", erro)
     finally:
+        conexao.conn.commit()
         conexao.conn.close()
