@@ -3,11 +3,17 @@ import menu_pais
 import menu_professor
 import menu_diretor
 import menu_principal
+<<<<<<< Updated upstream
 import verificar_senha
+=======
+import verificar_senha      
+import os
+>>>>>>> Stashed changes
 def main():
+  
+
     while True:
         opcao = menu_principal.menu()
-        
         if opcao == '1':
             menu_aluno.aluno()
             
@@ -20,14 +26,15 @@ def main():
         elif opcao == '4':
             if verificar_senha.verificacao():
                 menu_diretor.diretor()
+                
             else:
-                continue  # Volta ao menu principal se a senha estiver incorreta
-            
+                continue  # Volta ao menu principal se a senha estiver incorreta 
+            os.system("cls")
         elif opcao == '5':
             print("Encerrando o programa...")
             break
-            
         else:
-            print("Opção inválida. Tente novamente.")
-
+            print("Opção inválida. Tente novamente.") 
+os.system("cls")
+            
 main()

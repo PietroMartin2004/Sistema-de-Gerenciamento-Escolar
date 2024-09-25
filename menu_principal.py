@@ -1,3 +1,4 @@
+import os
 def menu():
     #Código de cores para o menu
     RESET = "\033[0m"
@@ -18,6 +19,7 @@ def menu():
     print(f"{GREEN}5. Sair{RESET}")
     global opcao      
     opcao = input (f"{BLUE}Digite a opção escolhida: {RESET}")
+    os.system("cls")
     return opcao
     
 

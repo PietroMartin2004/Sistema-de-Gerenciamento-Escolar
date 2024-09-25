@@ -3,9 +3,14 @@ import conexao
 
 
 def imprimir_relatorio_semestral():
+    RESET = "\033[0m"
+    BOLD = "\033[1m"
+    GREEN = "\033[92m"
+    BLUE = "\033[94m"
+    CYAN = "\033[96m"
     try:
         conexao.conectar_banco()
-        matricula = input("Informe a matrícula do aluno para imprimir os relatórios: ")
+        matricula = input(f"{BOLD} Informe a matrícula do aluno para imprimir os relatórios: {GREEN}")
         semstral = input("Imprimir o 1º ou 2º semestre? ")
             # Imprimir o 1º relatório sobre o desempenho
         if semstral == '1':

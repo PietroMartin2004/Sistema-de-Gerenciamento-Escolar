@@ -1,7 +1,7 @@
 import consulta
 import imprimir_semestral
-import imprimir_anual
-
+import imprimir_anual 
+import os
 def pais():
     RESET = "\033[0m"
     BOLD = "\033[1m"
@@ -14,14 +14,14 @@ def pais():
     print(BOLD + GREEN + "                 ESCOLA MODERNA" + RESET)
     print(BOLD + BLUE + "="*50 + RESET)
     print()
-    print(f"{GREEN}1. Consultar Boletim Escolar {RESET}")
-    print(f"{GREEN}2. Acessar relatorio semestral{RESET}")
-    print(f"{GREEN}3. Acessar relatorio anual{RESET}")
-    print(f"{GREEN}(Qualquer outro valor). Sair{RESET}")
-
+    print(f"{GREEN}1. Consultar Boletim Escolar  {RESET}")
+    print(f"{GREEN}2. Acessar relatorio semestral {RESET}")
+    print(f"{GREEN}3. Acessar relatorio anual  {RESET}")
+    print(f"{GREEN}4. Sair (Para sair digite outro valor) {RESET}")
+    
     global opcao      
     opcao = input(f"{BLUE} Digite a opção escolhida {RESET}")
-
+    os.system("cls")
     if opcao == '1':
         consulta.consultar_boletim() 
     elif opcao == '2':

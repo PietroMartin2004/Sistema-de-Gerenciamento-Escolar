@@ -2,20 +2,29 @@ import sqlite3
 import conexao
 import tabela
 import media_final
+
+
+
 def consultar_boletim():
+
+    RESET = "\033[0m"
+    BOLD = "\033[1m"
+    GREEN = "\033[92m"
+    BLUE = "\033[94m"
+    CYAN = "\033[96m"
     tabela.criar_tabela()
-    #Chamando a função do cálculo das médias para ir atualizando
+    # Chamando a função do cálculo das médias para ir atualizando
     media_final.obter_medias_finais()
     # Matricula
-    matricula = input("Informe o número da matrícula que deseja consultar: ")
+    matricula = input(f"{BOLD} Informe o número da matrícula que deseja consultar: {GREEN}" )
     try:
         # Pegando a matrícula da tabela
-        resultado = conexao.conn.execute('''SELECT * FROM aluno WHERE matricula = ?''', (matricula,)).fetchall()
+        resultado = conexao.conn.execute(
+            '''SELECT * FROM aluno WHERE matricula = ?''', (matricula,)).fetchall()
         if not resultado:
             print("Matrícula não encontrada!")
         else:
             for result in resultado:
-                print(">>>>>>>>>><<<<<<<<<<\n")
                 print(f"Matrícula: {result[0]}")
                 print(f"Nome: {result[1]}")
                 print(f"Presença: {result[11]}")
@@ -23,6 +32,7 @@ def consultar_boletim():
                 print(f"Série: {result[13]}")
                 print(f"Turno: {result[14]}\n")
                 print("Notas:")
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
                 print(f"  Português: {result[16]} (1ª unidade), {result[17]} (2ª unidade), {result[18]} (3ª unidade)")
@@ -85,6 +95,30 @@ def consultar_boletim():
                 print(f"  História:      {result[23]}              {result[33]}              {result[43]}")
                 print(f"  Sociologia:    {result[24]}              {result[34]}              {result[44]}")
             
+=======
+                print(f"             (1ª Unidade)     (2ª Unidade)      (3ª Unidade)")
+                print(f"  Português:     {result[15]}              {
+                      result[25]}              {result[35]}")
+                print(f"  Matemática:    {result[16]}              {
+                      result[26]}              {result[36]}")
+                print(f"  Biologia:      {result[17]}              {
+                      result[27]}              {result[37]}")
+                print(f"  Física:        {result[18]}              {
+                      result[28]}              {result[38]}")
+                print(f"  Inglês:        {result[19]}              {
+                      result[29]}              {result[39]}")
+                print(f"  Filosofia:     {result[20]}              {
+                      result[30]}              {result[40]}")
+                print(f"  Artes:         {result[21]}              {
+                      result[31]}              {result[41]}")
+                print(f"  Química:       {result[22]}              {
+                      result[32]}              {result[42]}")
+                print(f"  História:      {result[23]}              {
+                      result[33]}              {result[43]}")
+                print(f"  Sociologia:    {result[24]}              {
+                      result[34]}              {result[44]}")
+
+>>>>>>> Stashed changes
                 print("\nMédias Finais:")
                 print(f"  Português:  {result[45]}")
                 print(f"  Matemática: {result[46]}")
@@ -96,8 +130,12 @@ def consultar_boletim():
                 print(f"  Química:    {result[52]}")
                 print(f"  História:   {result[53]}")
                 print(f"  Sociologia: {result[54]}")
+<<<<<<< Updated upstream
 >>>>>>> 4bcd64947ae7db7d3d51dafd82ef5509299b86de
                 
+=======
+
+>>>>>>> Stashed changes
     except sqlite3.Error as erro:
         print("Erro ao encontrar aluno", erro)
     finally:
