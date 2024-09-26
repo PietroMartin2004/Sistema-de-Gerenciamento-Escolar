@@ -1,46 +1,35 @@
-import sqlite3
-import conexao
+import sqlite3 # Importação padrão do Python para interagir com bancos de dados SQLite
+import conexao # Responsável por estabelecer a conexão com o banco de dados
 
-def imprimir_relatorio_anual():
-    try:
-        # Conectar banco
-        conexao.conectar_banco()
+def gerar_relatorio_anual():
+    try:  # Capturar as exceções
+        conexao.conectar_banco() # Chama a função para estabelecer a conexão com o banco de dados
+        matricula = int(input("Informe a matricula do aluno para gerar o relatório anual: ")) #  Solicita ao usuário a matrícula do aluno para gerar o relatório
+        
+        # Busca o aluno com a matrícula informada, se o aluno for encontrado, os dados são armazenados na variável
+        conexao.cursor.execute("SELECT * FROM aluno WHERE matricula =?", (matricula,))
+        aluno = conexao.cursor.fetchone()
 
-        matricula = int(input("Informe a matrícula do aluno para imprimir os relatórios: "))
+        # Se o aluno for encontrado, o usuário é solicitado a fornecer os relatórios sobre desempenho, presença e comportamento
+        if aluno:
+            relatorioA1 = input("Informe o relatório sobre o desempenho: ")
+            relatorioA2 = input("Informe o relatório sobre a presença:  ")
+            relatorioA3 = input("Informe o relatório sobre o comportamento:  ")
+            
+            conexao.cursor.execute("""
+                UPDATE aluno
+                SET relatorioA1 = ?, relatorioA2 = ?, relatorioA3 = ?
+                WHERE matricula = ?
+            """, (relatorioA1, relatorioA2, relatorioA3, matricula))
 
-        # Obter o relatório sobre o desempenho
-        conexao.cursor.execute("SELECT relatorioA1 FROM aluno WHERE matricula=?", (matricula,))
-        relatorioA1 = conexao.cursor.fetchone()
-
-        # Obter o relatório sobre a presença
-        conexao.cursor.execute("SELECT relatorioA2 FROM aluno WHERE matricula=?", (matricula,))
-        relatorioA2 = conexao.cursor.fetchone()
-
-        # Obter o relatório sobre o comportamento
-        conexao.cursor.execute("SELECT relatorioA3 FROM aluno WHERE matricula=?", (matricula,))
-        relatorioA3 = conexao.cursor.fetchone()
-
-        # Exibir os relatórios
-        print("\nRelatório sobre o desempenho:")
-        if relatorioA1 and relatorioA1[0]:
-            print(relatorioA1[0])
+            # Uma nova query é executada para atualizar os campos de relatório do aluno na tabela aluno
+            conexao.conn.commit() # As alterações no banco de dados são confirmadas com conexao.conn.commit()
+            print("Relatório anual atualizado com sucesso!") # Uma mensagem é exibida para informar que o relatório foi atualizado de boa
         else:
-            print("Nenhum relatório disponível.")
+            print("Aluno não encontrado!") # Se o aluno não for encontrado, uma mensagem de erro é exibida
 
-        print("\nRelatório sobre a presença:")
-        if relatorioA2 and relatorioA2[0]:
-            print(relatorioA2[0])
-        else:
-            print("Nenhum relatório disponível.")
-
-        print("\nRelatório sobre o comportamento:")
-        if relatorioA3 and relatorioA3[0]:
-            print(relatorioA3[0])
-        else:
-            print("Nenhum relatório disponível.")
-
-    except sqlite3.Error as erro:
-        print("Erro ao imprimir os relatórios!", erro)
-    finally:
+    except sqlite3.Error as erro: #  Qualquer exceção do tipo sqlite3.Error que possa ocorrer, a mensagem de erro é exibida para o usuário
+        print("Erro ao gerar o relatório anual!", erro)
+    finally: # Garante que a conexão com o banco de dados seja fechada, mesmo que ocorra uma exceção
+        conexao.conn.commit()
         conexao.conn.close()
-

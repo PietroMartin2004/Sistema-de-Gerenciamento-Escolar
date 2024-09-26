@@ -1,8 +1,12 @@
 import conexao
 
 def obter_medias_finais():
+
+    #conexão com o banco de dados
     conexao.conectar_banco()
     try:
+        #Calcular as médias finais das disciplinas.
+        #O ROUND é usado para arredondar os resultados para duas casas decimais.
         media = """
               UPDATE aluno
         SET
@@ -37,8 +41,12 @@ def obter_medias_finais():
                                             sociologia_segunda_unidade +
                                             sociologia_terceira_unidade) / 3, 2)
         """
-
+        #Atualizar as médias finais no banco de dados.
         conexao.cursor.execute(media)
+
+        #Obtém todos os resultados, caso sejam retornados.
         conexao.cursor.fetchall()
+
     except Exception as e:
+        #Exibe uma mensagem de erro se der errado.
         print(f"Erro ao executar a consulta: {e}")

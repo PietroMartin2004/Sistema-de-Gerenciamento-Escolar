@@ -2,9 +2,12 @@ import conexao
 import media_final
 
 def criar_tabela():
+    
     conexao.conectar_banco()
+    #Chama a função do módulo media_finais para calcular ou obter as médias finais.
     media_final.obter_medias_finais()
     
+    #criar a tabela aluno se ela não existir.
     criar_tabela_sql = """
     CREATE TABLE IF NOT EXISTS aluno (
         matricula INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -73,6 +76,7 @@ def criar_tabela():
         relatorioA3 TEXT
     )
     """
-    
+    #Executa o comando SQL para criar a tabela aluno no banco de dados.
     conexao.cursor.execute(criar_tabela_sql)
+    #Confirma as mudanças no banco de dados.
     conexao.conn.commit()
