@@ -8,7 +8,7 @@ def conectar_banco():
         conn = sqlite3.connect('escola.db')
         global cursor
         cursor = conn.cursor()
-        conn.commit()bv
+        conn.commit()
     except sqlite3.Error as erro:
         print("Erro de conexão com o banco de dados!")
  

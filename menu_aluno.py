@@ -1,4 +1,4 @@
-import os
+
 import consulta
 
 
@@ -18,7 +18,6 @@ def aluno():
         print(f"{GREEN}2. Sair {RESET}")
         global opcao
         opcao = input(f"{BLUE} Digite a opção escolhida: {RESET}")
-        os.system("cls")
         if opcao == '1':
             # Função para ler o boletim
             consulta.consultar_boletim()
@@ -27,4 +26,3 @@ def aluno():
             break
         else:
          print(f"{BLUE}Digite um valor válido...{RESET}")
-os.system("cls")
